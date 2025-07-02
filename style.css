@@ -1,0 +1,170 @@
+/* --- GERAL E RESET BÁSICO --- */
+
+/* Define o modelo de caixa para ser mais intuitivo. 
+  'border-box' faz com que padding e border não aumentem a largura final do elemento.
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4; /* Um cinza bem claro para o fundo */
+  color: #333; /* Cor principal do texto */
+  line-height: 1.6;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO (MENU) --- */
+
+header {
+  background-color: #333; /* Fundo escuro para o menu */
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed; /* Deixa o menu fixo no topo da página */
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Garante que o menu fique na frente de outros elementos */
+}
+
+nav ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  text-align: center; /* Centraliza os itens do menu */
+}
+
+nav ul li {
+  display: inline-block; /* Coloca os itens do menu lado a lado */
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px; /* Bordas levemente arredondadas */
+  transition: background-color 0.3s ease; /* Efeito suave na troca de cor */
+}
+
+/* Efeito ao passar o mouse sobre um link do menu (que não seja o ativo) */
+nav ul li a:hover {
+  background-color: #555;
+}
+
+/* --- TRUQUE PARA A ABA ATIVA --- */
+/* Esta é a parte que destaca o link da página atual.
+  Funciona lendo a classe que colocamos na tag <body> de cada arquivo HTML.
+*/
+.pagina-inicio nav a[href="index.html"],
+.pagina-sobre nav a[href="sobre-mim.html"],
+.pagina-formacao nav a[href="formacao.html"],
+.pagina-portfolio nav a[href="portfolio.html"],
+.pagina-contato nav a[href="contato.html"] {
+  background-color: #007bff; /* Cor de destaque para a aba ativa (azul) */
+  cursor: default; /* O cursor não muda, pois já estamos na página */
+}
+
+/* Impede a mudança de cor no hover da aba ativa */
+.pagina-inicio nav a[href="index.html"]:hover,
+.pagina-sobre nav a[href="sobre-mim.html"]:hover,
+.pagina-formacao nav a[href="formacao.html"]:hover,
+.pagina-portfolio nav a[href="portfolio.html"]:hover,
+.pagina-contato nav a[href="contato.html"]:hover {
+  background-color: #007bff;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+
+main {
+  padding-top: 80px; /* Adiciona um espaço no topo para não ficar atrás do menu fixo */
+  padding-bottom: 20px;
+}
+
+/* Container para centralizar o conteúdo */
+.container {
+  max-width: 960px; /* Largura máxima do conteúdo */
+  margin: auto; /* Centraliza o container */
+  overflow: hidden; /* Limpa floats internos */
+  padding: 0 20px;
+}
+
+section {
+  background: #fff; /* Fundo branco para as seções */
+  margin-bottom: 20px; /* Espaço entre as seções */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  animation: fadeInUp 0.7s ease-out forwards; /* Animação de entrada */
+}
+
+section h1,
+section h2 {
+  color: #007bff; /* Cor dos títulos das seções */
+  margin-bottom: 20px;
+}
+
+/* --- ESTILOS DO FORMULÁRIO DE CONTATO --- */
+
+form label {
+  display: block; /* Faz com que o label fique em sua própria linha */
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form textarea {
+  height: 150px; /* Altura da área de mensagem */
+  resize: vertical; /* Permite que o usuário redimensione verticalmente */
+}
+
+/* --- RODAPÉ --- */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  color: #666;
+}
+
+/* Efeito de transição para o botão de envio do formulário */
+form input[type="submit"] {
+  transition: transform 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  transform: scale(1.05); /* Aumenta o tamanho em 5% */
+  cursor: pointer;
+}
+
+/* Efeito de transição para os links de projetos no portfólio */
+.pagina-portfolio ul li a {
+  transition: color 0.3s ease;
+}
+
+.pagina-portfolio ul li a:hover {
+  color: #0056b3; /* Deixa o azul do link um pouco mais escuro */
+}
+
+/* --- ANIMAÇÕES E TRANSIÇÕES --- */
+
+/* Define a animação de fade in e slide para cima */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Começa 20px para baixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina na posição original */
+  }
+}
