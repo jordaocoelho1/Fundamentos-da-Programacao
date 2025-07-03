@@ -104,6 +104,19 @@ section h2 {
   margin-bottom: 20px;
 }
 
+section hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eee; /* Linha divisória mais sutil */
+}
+
+section ul {
+  list-style-position: inside; /* Coloca marcadores dentro da caixa do elemento */
+}
+section ul li {
+  margin-bottom: 15px; /* Espaçamento entre itens da lista */
+}
+
 /* --- ESTILOS DO FORMULÁRIO DE CONTATO --- */
 
 form label {
@@ -127,6 +140,41 @@ form textarea {
   resize: vertical; /* Permite que o usuário redimensione verticalmente */
 }
 
+form input[type="submit"] {
+  background-color: #28a745; /* Verde para o botão de envio */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #218838; /* Verde mais escuro no hover */
+  transform: scale(1.05); /* Aumenta o tamanho em 5% */
+}
+
+/* --- PÁGINA DE CONTATO (REDES SOCIAIS) --- */
+.social-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0056b3;
+}
+
 /* --- RODAPÉ --- */
 
 footer {
@@ -134,16 +182,6 @@ footer {
   padding: 20px;
   margin-top: 20px;
   color: #666;
-}
-
-/* Efeito de transição para o botão de envio do formulário */
-form input[type="submit"] {
-  transition: transform 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-  transform: scale(1.05); /* Aumenta o tamanho em 5% */
-  cursor: pointer;
 }
 
 /* Efeito de transição para os links de projetos no portfólio */

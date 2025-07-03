@@ -1,12 +1,17 @@
+<!-- Define o tipo de documento como HTML5 -->
 <!DOCTYPE html>
 <html lang="pt-br">
+  <!-- A seção <head> contém as configurações da página, como título e links para CSS -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu Portfólio - Contato</title>
+    <!-- Link para o arquivo de estilos CSS externo -->
     <link rel="stylesheet" href="style.css" />
   </head>
+  <!-- O <body> contém todo o conteúdo visível. A classe 'pagina-contato' é usada pelo CSS para destacar o link ativo no menu. -->
   <body class="pagina-contato">
+    <!-- Cabeçalho com o menu de navegação principal -->
     <header>
       <nav>
         <ul>
@@ -19,8 +24,10 @@
       </nav>
     </header>
 
+    <!-- Conteúdo principal da página -->
     <main>
       <div class="container">
+        <!-- Seção com o formulário de contato -->
         <section>
           <h2>Entre em Contato</h2>
           <p>
@@ -28,6 +35,7 @@
             formulário abaixo ou me encontre nas redes sociais!
           </p>
 
+          <!-- O atributo 'action' define para onde os dados do formulário são enviados. '#' é um placeholder. -->
           <form action="#" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required />
@@ -38,24 +46,30 @@
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" required></textarea>
 
-            <input
-              type="submit"
-              value="Enviar Mensagem"
-              style="
-                background-color: #28a745;
-                color: white;
-                padding: 10px 15px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-              "
-            />
+            <input type="submit" value="Enviar Mensagem" />
           </form>
+        </section>
+
+        <!-- Seção com os links para redes sociais -->
+        <section>
+          <h2>Minhas Redes</h2>
+          <p>Conecte-se comigo através das plataformas abaixo:</p>
+          <div class="social-links">
+            <a href="https://instagram.com/jordaocoelho" target="_blank"
+              >Instagram</a
+            >
+            <a href="https://www.linkedin.com/in/jordao-coelho/" target="_blank"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/jordaocoelho1" target="_blank"
+              >GitHub</a
+            >
+          </div>
         </section>
       </div>
     </main>
 
+    <!-- Rodapé da página -->
     <footer>
       <p>&copy; 2025 - Jordão Coelho. Todos os direitos reservados.</p>
     </footer>
